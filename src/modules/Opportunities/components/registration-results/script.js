@@ -40,7 +40,7 @@ app.component('registration-results', {
         },
 
         canShowAppeal() {
-            if (this.registration.opportunity.isReportingPhase) {
+            if (!this.registration?.opportunity || this.registration.opportunity.isReportingPhase) {
                 return false;
             }
             return this.registration.status > 1 && this.registration.status <= 10;
